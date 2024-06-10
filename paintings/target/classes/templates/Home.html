@@ -1,0 +1,27 @@
+<table>
+    <tr>
+        <th>Titolo</th>
+        <th>Autore</th>
+        <th>Anno</th>
+    </tr>
+    <!-- 
+    Questo blocco th:block viene utilizzato per iterare attraverso la lista di ricette nel modello.
+    L'attributo th:each="ricetta : ${ricette}" definisce la variabile "ricetta" che rappresenta ogni elemento nella lista "ricette".
+    -->
+    <th:block th:each="painting : ${paintings}">
+        <tr>
+            <!-- 
+            Queste celle di tabella visualizzano il nome, gli ingredienti e il procedimento della ricetta corrente.
+            L'attributo th:text="${ricetta.nome}" imposta il testo della cella con il nome della ricetta.
+            -->
+            <td th:text="${painting.title}"></td>
+            <td th:text="${painting.author}"></td>
+            <td th:text="${painting.anno}"></td>
+        </tr>
+    </th:block>
+</table>
+<!-- 
+Questo link consente all'utente di navigare alla pagina per aggiungere una nuova ricetta.
+L'attributo href="/aggiungi" imposta l'URL a cui punta il link.
+-->
+<a href="/aggiungi">Aggiungi Quadro</a>

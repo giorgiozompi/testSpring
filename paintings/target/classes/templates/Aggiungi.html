@@ -1,0 +1,36 @@
+<form th:action="@{/aggiungi}" th:object="${quadro}" method="post">
+    <!-- 
+    L'attributo th:action specifica l'URL a cui inviare i dati del form quando viene inviato.
+    L'attributo @{/aggiungi} è un'espressione Thymeleaf per generare un URL assoluto basato su un percorso relativo.
+    -->
+    
+    <!-- 
+    L'attributo th:object specifica l'oggetto modello che rappresenta il form.
+    "${ricetta}" è un'espressione Thymeleaf che si riferisce all'oggetto "ricetta" presente nel modello.
+    -->
+    
+    <!-- 
+    Questo è un campo di input per il nome della ricetta.
+    L'attributo th:field="*{nome}" collega il campo all'attributo "nome" dell'oggetto "ricetta" nel modello.
+    L'attributo placeholder fornisce un testo di esempio per guidare l'utente.
+    -->
+    <input type="text" th:field="*{nome}" placeholder="Nome del quadro">
+    
+    <!-- 
+    Questo è un campo di input per gli ingredienti della ricetta.
+    L'attributo th:field="*{ingredienti}" collega il campo all'attributo "ingredienti" dell'oggetto "ricetta" nel modello.
+    -->
+    <textarea th:field="*{author}" placeholder="Autore"></textarea>
+    
+    <!-- 
+    Questo è un campo di input per il procedimento della ricetta.
+    L'attributo th:field="*{procedimento}" collega il campo all'attributo "procedimento" dell'oggetto "ricetta" nel modello.
+    -->
+    <textarea th:field="*{anno}" placeholder="Anno"></textarea>
+    
+    <!-- 
+    Questo è un pulsante di invio del form.
+    Quando l'utente clicca su questo pulsante, i dati del form vengono inviati all'URL specificato dall'attributo th:action.
+    -->
+    <button type="submit">Invia</button>
+</form>
